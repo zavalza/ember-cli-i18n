@@ -22,6 +22,10 @@ export default function tHelper(params, hash, options, env) {
 
   application.localeStream.subscribe(stream.notify, stream);
 
+  if (typeof(path) === "undefined") {
+    return null;
+  }
+
   if (path.isStream) {
     path.subscribe(stream.notify, stream);
   }
